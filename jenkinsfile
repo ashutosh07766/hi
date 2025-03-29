@@ -4,6 +4,11 @@ pipeline {
         maven 'maven'  // Use the exact name you set in Global Tool Configuration
     }
     stages {
+        stage('checkout'){
+steps{
+     git branch:'master',url:'https://github.com/ashutosh07766/hi.git'
+}
+}
         stage('Build') {
             steps {
                 sh 'mvn clean package'
